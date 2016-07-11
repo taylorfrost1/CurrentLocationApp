@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FDEFF40E1D3438AB0058467F"
+               BlueprintIdentifier = "FDEFF42E1D344CFD0058467F"
                BuildableName = "CurrentLocationPractice.app"
                BlueprintName = "CurrentLocationPractice"
                ReferencedContainer = "container:CurrentLocationPractice.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FDEFF40E1D3438AB0058467F"
+            BlueprintIdentifier = "FDEFF42E1D344CFD0058467F"
             BuildableName = "CurrentLocationPractice.app"
             BlueprintName = "CurrentLocationPractice"
             ReferencedContainer = "container:CurrentLocationPractice.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FDEFF40E1D3438AB0058467F"
+            BlueprintIdentifier = "FDEFF42E1D344CFD0058467F"
             BuildableName = "CurrentLocationPractice.app"
             BlueprintName = "CurrentLocationPractice"
             ReferencedContainer = "container:CurrentLocationPractice.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FDEFF40E1D3438AB0058467F"
+            BlueprintIdentifier = "FDEFF42E1D344CFD0058467F"
             BuildableName = "CurrentLocationPractice.app"
             BlueprintName = "CurrentLocationPractice"
             ReferencedContainer = "container:CurrentLocationPractice.xcodeproj">
