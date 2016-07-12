@@ -13,6 +13,7 @@ import CoreLocation
 class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate {
     
     var locationManager: CLLocationManager!
+    var pinName: String = ""
    
     @IBOutlet weak var mapView: MKMapView!
 
@@ -45,6 +46,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         mapView.showsUserLocation = true
         mapView.mapType = MKMapType(rawValue: 0)!
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
@@ -66,6 +68,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         )
         
         self.centerMap(location)
+        
+        self.alertControllerCode()
        
     }
     
@@ -107,6 +111,38 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         
         // 3. Add
         self.mapView.setRegion(region, animated: true)
+        
+    }
+    
+    func alertControllerCode() {
+        
+        let alertController = UIAlertController(title: "Add Pin", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: {
+            alert -> Void in
+            
+            let firstTextField = alertController.textFields![0] as UITextField
+            
+            if let name = firstTextField.text {
+                self.pinName = name
+            }
+
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
+            (action : UIAlertAction!) -> Void in
+        })
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Pin Name"
+        }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
         
     }
 

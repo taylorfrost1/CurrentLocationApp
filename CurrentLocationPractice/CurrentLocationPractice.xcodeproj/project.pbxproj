@@ -14,6 +14,8 @@
 		FDEFF43D1D344CFD0058467F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEFF43B1D344CFD0058467F /* LaunchScreen.storyboard */; };
 		FDEFF4451D3450BB0058467F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEFF4441D3450BB0058467F /* MapKit.framework */; };
 		FDEFF4471D3451040058467F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEFF4461D3451040058467F /* CoreLocation.framework */; };
+		FDEFF44B1D34A08A0058467F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF44A1D34A08A0058467F /* Constants.swift */; };
+		FDEFF44D1D34ADB70058467F /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFF44C1D34ADB70058467F /* Pin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FDEFF43E1D344CFD0058467F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDEFF4441D3450BB0058467F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FDEFF4461D3451040058467F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FDEFF44A1D34A08A0058467F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FDEFF44C1D34ADB70058467F /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +48,7 @@
 		FDEFF4261D344CFD0058467F = {
 			isa = PBXGroup;
 			children = (
-				FDEFF4461D3451040058467F /* CoreLocation.framework */,
-				FDEFF4441D3450BB0058467F /* MapKit.framework */,
+				FDEFF4491D3498120058467F /* Frameworks */,
 				FDEFF4311D344CFD0058467F /* CurrentLocationPractice */,
 				FDEFF4301D344CFD0058467F /* Products */,
 			);
@@ -63,13 +66,32 @@
 			isa = PBXGroup;
 			children = (
 				FDEFF4321D344CFD0058467F /* AppDelegate.swift */,
-				FDEFF4341D344CFD0058467F /* ViewController.swift */,
+				FDEFF44A1D34A08A0058467F /* Constants.swift */,
+				FDEFF44C1D34ADB70058467F /* Pin.swift */,
+				FDEFF4481D3498020058467F /* View Controllers */,
 				FDEFF4361D344CFD0058467F /* Main.storyboard */,
 				FDEFF4391D344CFD0058467F /* Assets.xcassets */,
 				FDEFF43B1D344CFD0058467F /* LaunchScreen.storyboard */,
 				FDEFF43E1D344CFD0058467F /* Info.plist */,
 			);
 			path = CurrentLocationPractice;
+			sourceTree = "<group>";
+		};
+		FDEFF4481D3498020058467F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDEFF4341D344CFD0058467F /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FDEFF4491D3498120058467F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDEFF4461D3451040058467F /* CoreLocation.framework */,
+				FDEFF4441D3450BB0058467F /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +173,8 @@
 			files = (
 				FDEFF4351D344CFD0058467F /* ViewController.swift in Sources */,
 				FDEFF4331D344CFD0058467F /* AppDelegate.swift in Sources */,
+				FDEFF44B1D34A08A0058467F /* Constants.swift in Sources */,
+				FDEFF44D1D34ADB70058467F /* Pin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
