@@ -6,7 +6,7 @@
 //  Copyright © 2016 Taylor Frost. All rights reserved.
 //
 
-let kSelected_Latitude = ""
-let kSelected_Longitude = ""
-let kSelected_TitleString = ""
-let kSelected_SubtitleString = ""
+let kSelected_Latitude = "kLATITUDE"
+let kSelected_Longitude = "kLONGITUDE"
+let kSelected_TitleString = "kTITLESTRING"
+

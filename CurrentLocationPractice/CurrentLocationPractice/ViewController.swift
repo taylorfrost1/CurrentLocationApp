@@ -14,6 +14,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
     
     var locationManager: CLLocationManager!
     var pinName: String = ""
+    var currentLat : Double = 0
+    var currentLong : Double = 0
+    var currentLocationName : String = ""
    
     @IBOutlet weak var mapView: MKMapView!
 
@@ -21,6 +24,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         super.viewDidLoad()
         
         self.locationManagerThings()
+        self.loadValues()
         
    }
     
@@ -52,28 +56,22 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
         
         print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")
+        
+        self.currentLat = newLocation.coordinate.latitude
+        self.currentLong = newLocation.coordinate.longitude
+        
     }
 
     @IBAction func buttonTapped(sender: UIBarButtonItem) {
         
-        self.addPin(40.439324, longitude: -111.815627, titleString: "Frost Home", subtitleString: "Sunset Hills Drive")
+        self.addPin(self.currentLat, longitude: self.currentLong, titleString: self.currentLocationName)
         
-        let latitude = 40.439324
-        
-        let longitude = -111.815627
-        
-        let location = CLLocationCoordinate2D(
-            latitude: latitude,
-            longitude: longitude
-        )
-        
-        self.centerMap(location)
         
         self.alertControllerCode()
        
     }
     
-    func addPin(latitude: Double, longitude: Double, titleString: String, subtitleString: String) {
+    func addPin(latitude: Double, longitude: Double, titleString: String) {
         
         // 2. Create a CLLocationCoordinate2D
         
@@ -88,10 +86,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         
         annotation.coordinate = location
         annotation.title = titleString
-        annotation.subtitle = subtitleString
         
         // 4. Add to the annotation to the mapView
         self.mapView.addAnnotation(annotation)
+        
+        self.centerMap(location)
+        
+        self.saveDefaults()
+
     }
     
     func centerMap(centerCoordinate: CLLocationCoordinate2D) {
@@ -118,13 +120,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         
         let alertController = UIAlertController(title: "Add Pin", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
+        
         let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: {
             alert -> Void in
             
             let firstTextField = alertController.textFields![0] as UITextField
             
             if let name = firstTextField.text {
-                self.pinName = name
+                
+                self.currentLocationName = name
+                
             }
 
         })
@@ -143,8 +148,34 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         
         self.presentViewController(alertController, animated: true, completion: nil)
         
+    }
+    
+    func saveDefaults() {
+        
+        NSUserDefaults.standardUserDefaults().setDouble(self.currentLat, forKey: kSelected_Latitude)
+        NSUserDefaults.standardUserDefaults().setDouble(self.currentLong, forKey: kSelected_Longitude)
+        NSUserDefaults.standardUserDefaults().setObject(self.currentLocationName, forKey: kSelected_TitleString)
+    }
+    
+    func loadValues() {
+        self.currentLat = NSUserDefaults.standardUserDefaults().doubleForKey(kSelected_Latitude)
+        
+        self.currentLong = NSUserDefaults.standardUserDefaults().doubleForKey(kSelected_Longitude)
+        
+        if let name = NSUserDefaults.standardUserDefaults().objectForKey(kSelected_TitleString) as? String {
+            
+            self.currentLocationName = name
+            
+            self.addPin(self.currentLat, longitude: self.currentLong, titleString: self.currentLocationName)
+            
+            
+        }
+            
+        
         
     }
+    
+    
 
 }
 

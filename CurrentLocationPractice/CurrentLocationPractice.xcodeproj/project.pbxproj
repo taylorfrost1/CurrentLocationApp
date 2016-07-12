@@ -66,8 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				FDEFF4321D344CFD0058467F /* AppDelegate.swift */,
-				FDEFF44A1D34A08A0058467F /* Constants.swift */,
-				FDEFF44C1D34ADB70058467F /* Pin.swift */,
+				FDEFF44E1D353E470058467F /* Modals */,
 				FDEFF4481D3498020058467F /* View Controllers */,
 				FDEFF4361D344CFD0058467F /* Main.storyboard */,
 				FDEFF4391D344CFD0058467F /* Assets.xcassets */,
@@ -92,6 +91,15 @@
 				FDEFF4441D3450BB0058467F /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDEFF44E1D353E470058467F /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				FDEFF44A1D34A08A0058467F /* Constants.swift */,
+				FDEFF44C1D34ADB70058467F /* Pin.swift */,
+			);
+			name = Modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +338,7 @@
 				FDEFF4431D344CFD0058467F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
