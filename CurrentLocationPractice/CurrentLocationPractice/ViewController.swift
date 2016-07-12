@@ -48,6 +48,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")
     }
 
+    @IBAction func buttonTapped(sender: UIBarButtonItem) {
+        
+     let annotation = CustomPointAnnotation()   
+        
+        
+        
+        
+    }
 
 
 }
