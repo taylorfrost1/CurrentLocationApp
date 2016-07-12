@@ -66,7 +66,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         
         self.addPin(self.currentLat, longitude: self.currentLong, titleString: self.currentLocationName)
         
-        
         self.alertControllerCode()
        
     }
@@ -130,7 +129,15 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
                 
                 self.currentLocationName = name
                 
+                self.saveDefaults()
+    
             }
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+            self.addPin(self.currentLat, longitude: self.currentLong, titleString: self.currentLocationName)
+                
+            })
 
         })
         
